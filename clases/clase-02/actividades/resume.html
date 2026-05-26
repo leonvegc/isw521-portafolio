@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Christopher León Vega – CV</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      color: #2d2d2d;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: #fff;
+      padding: 48px 48px 36px;
+    }
+
+    .header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .header .location {
+      font-size: 0.95rem;
+      color: #a8b8d8;
+      margin-bottom: 16px;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 16px;
+    }
+
+    .contact-bar a,
+    .contact-bar span {
+      color: #e0e8f5;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-bar a:hover { color: #fff; }
+
+    .badge {
+      background: #e94560;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      margin-top: 16px;
+    }
+
+    /* Body layout */
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+    }
+
+    /* Main column */
+    .main { padding: 40px 40px 40px 48px; border-right: 1px solid #eef0f4; }
+
+    /* Sidebar */
+    .sidebar { padding: 40px 32px; background: #f8f9fc; }
+
+    /* Section */
+    section { margin-bottom: 36px; }
+
+    section:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #e94560;
+      margin-bottom: 18px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e94560;
+    }
+
+    /* Profile */
+    .profile-text {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: #4a4a5a;
+    }
+
+    /* Experience */
+    .job { margin-bottom: 28px; }
+    .job:last-child { margin-bottom: 0; }
+
+    .job-header { margin-bottom: 6px; }
+
+    .job-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .job-company {
+      font-size: 0.88rem;
+      color: #e94560;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .job-period {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    .job ul {
+      margin-top: 10px;
+      padding-left: 18px;
+    }
+
+    .job ul li {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: #4a4a5a;
+      margin-bottom: 5px;
+    }
+
+    /* Sidebar sections */
+    .sidebar .section-title { font-size: 0.68rem; }
+
+    /* Skills */
+    .skill-item {
+      font-size: 0.85rem;
+      color: #3a3a4a;
+      padding: 6px 0;
+      border-bottom: 1px solid #eef0f4;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-item::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #e94560;
+      flex-shrink: 0;
+    }
+
+    .skill-item:last-child { border-bottom: none; }
+
+    /* Education */
+    .edu-item { margin-bottom: 18px; }
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-degree {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      line-height: 1.4;
+    }
+
+    .edu-school {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 3px;
+    }
+
+    .edu-period {
+      font-size: 0.78rem;
+      color: #e94560;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* Certification */
+    .cert-item {
+      background: #fff;
+      border: 1px solid #e0e4ef;
+      border-left: 4px solid #e94560;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+    }
+
+    .cert-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .cert-date {
+      font-size: 0.78rem;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    /* Languages */
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      padding: 6px 0;
+      border-bottom: 1px solid #eef0f4;
+    }
+
+    .lang-item:last-child { border-bottom: none; }
+
+    .lang-name { color: #1a1a2e; font-weight: 600; }
+
+    .lang-level {
+      background: #1a1a2e;
+      color: #fff;
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 0.75rem;
+      color: #bbb;
+      background: #f8f9fc;
+      border-top: 1px solid #eef0f4;
+    }
+
+    @media (max-width: 680px) {
+      .body { grid-template-columns: 1fr; }
+      .main { padding: 32px 24px; border-right: none; border-bottom: 1px solid #eef0f4; }
+      .sidebar { padding: 32px 24px; }
+      .header { padding: 36px 24px 28px; }
+      .header h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <h1>Christopher León Vega</h1>
+    <div class="location">📍 Alajuela, Costa Rica</div>
+    <div class="contact-bar">
+      <a href="mailto:crissjosue2599@gmail.com">✉️ crissjosue2599@gmail.com</a>
+      <span>📞 +506 8487 4195</span>
+    </div>
+    <span class="badge">Open to Opportunities</span>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="body">
+
+    <!-- === MAIN COLUMN === -->
+    <div class="main">
+
+      <!-- Professional Profile -->
+      <section>
+        <div class="section-title">Professional Profile</div>
+        <p class="profile-text">
+          Quality Analyst with 3+ years of experience in QA, process optimization, and training
+          development. Skilled in applying best practices, driving data-informed decisions, and
+          improving business outcomes. Recognized for agile problem-solving, analytical thinking,
+          and effective communication in fast-paced environments. Currently pursuing a Bachelor's
+          in Software Engineering, combining technical training with hands-on QA experience.
+          Former Culinary Specialist in luxury hospitality, bringing leadership, discipline, and
+          adaptability now applied to tech roles.
+        </p>
+      </section>
+
+      <!-- Work Experience -->
+      <section>
+        <div class="section-title">Work Experience</div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">3D Quality Analyst</div>
+            <div class="job-company">BMA Group (Remote)</div>
+            <div class="job-period">Apr 2022 – Present</div>
+          </div>
+          <ul>
+            <li>Analyzed quality and performance data to identify trends, guide operational decisions, and recommend process improvements.</li>
+            <li>Developed and maintained QA documentation, including SOPs, test plans, and validation records to ensure compliance and consistency.</li>
+            <li>Collaborated with cross-functional teams to document, escalate, and resolve quality issues using structured root cause analysis.</li>
+            <li>Provided regular updates to leadership on key quality metrics, highlighting performance gaps and recommending corrective actions.</li>
+            <li>Designed and delivered training materials and onboarding documentation to support new team members and reinforce quality standards.</li>
+            <li>Participated in user acceptance testing (UAT) and regression testing cycles, ensuring adherence to functional and non-functional requirements.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Culinary Specialist – Hospitality Operations</div>
+            <div class="job-company">Hotel Amor Arenal / Hotel Tabacón</div>
+            <div class="job-period">Nov 2018 – Dec 2021</div>
+          </div>
+          <ul>
+            <li>Led kitchen operations in 5-star hotels, enforcing strict standards for quality, hygiene, and service.</li>
+            <li>Created and documented operational procedures to promote consistency, efficiency, and team alignment.</li>
+            <li>Trained and supervised staff, fostering a culture of accountability, precision, and continuous improvement.</li>
+            <li>Strengthened core skills such as attention to detail, time management, and procedural compliance — directly applicable to QA work.</li>
+            <li>Gained valuable experience in collaboration, adaptability, and leadership, now leveraged in quality assurance and technical roles.</li>
+          </ul>
+        </div>
+      </section>
+
+    </div><!-- /main -->
+
+    <!-- === SIDEBAR === -->
+    <div class="sidebar">
+
+      <!-- Education -->
+      <section>
+        <div class="section-title">Education</div>
+
+        <div class="edu-item">
+          <div class="edu-degree">Bachelor of Software Engineering</div>
+          <div class="edu-school">Universidad Técnica Nacional</div>
+          <div class="edu-period">Jan 2025 – Present</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">MBA in Hotel Management</div>
+          <div class="edu-school">Universidad del Turismo, Paseo Colón</div>
+          <div class="edu-period">Jan 2024 – Present</div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section>
+        <div class="section-title">Certifications</div>
+        <div class="cert-item">
+          <div class="cert-name">Six Sigma Yellow Belt</div>
+          <div class="cert-date">Dec 2022</div>
+        </div>
+      </section>
+
+      <!-- Technical & Soft Skills -->
+      <section>
+        <div class="section-title">Technical &amp; Soft Skills</div>
+        <div class="skill-item">Manual testing &amp; test case execution</div>
+        <div class="skill-item">Defect tracking with JIRA</div>
+        <div class="skill-item">QA documentation &amp; SOP development</div>
+        <div class="skill-item">Root cause analysis</div>
+        <div class="skill-item">Agile (Scrum, Kanban)</div>
+        <div class="skill-item">UAT &amp; regression testing</div>
+        <div class="skill-item">Attention to detail &amp; process adherence</div>
+        <div class="skill-item">Team collaboration &amp; communication</div>
+      </section>
+
+      <!-- Languages -->
+      <section>
+        <div class="section-title">Languages</div>
+        <div class="lang-item">
+          <span class="lang-name">Spanish</span>
+          <span class="lang-level">Native</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">English</span>
+          <span class="lang-level">B2</span>
+        </div>
+      </section>
+
+    </div><!-- /sidebar -->
+  </div><!-- /body -->
+
+  <div class="footer">Christopher León Vega &mdash; CV &copy; 2026</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Glosario
+
+*Pendiente de completar.*
