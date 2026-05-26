@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Semántico · Workshop</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #1a3a6b;
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    header nav {
+      display: flex;
+      gap: 16px;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    header form {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    header form label {
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    header form input[type="search"] {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    header form button {
+      padding: 6px 14px;
+      background: #f0a500;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .layout {
+      display: flex;
+      flex: 1;
+      gap: 0;
+    }
+
+    aside {
+      background: #2f6bbf;
+      color: white;
+      width: 200px;
+      padding: 24px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    aside.related {
+      background: #d4641a;
+    }
+
+    main {
+      flex: 1;
+      background: #4a90d9;
+      color: white;
+      padding: 32px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    main article {
+      text-align: center;
+    }
+
+    main article h1 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    main article p {
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background: #1a3a6b;
+      color: white;
+      text-align: center;
+      padding: 14px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#">logo</a>
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+    </nav>
+    <form role="search">
+      <label for="buscar">Buscar:</label>
+      <input type="search" id="buscar" name="buscar" placeholder="Buscar..." />
+      <button type="submit">Buscar</button>
+    </form>
+  </header>
+
+  <div class="layout">
+    <aside>
+      &lt;aside&gt;<br/>Filters
+    </aside>
+
+    <main>
+      <article>
+        <h1>&lt;main&gt; &lt;article&gt; &lt;h1&gt;</h1>
+        <p>&lt;p&gt; contenido &lt;/p&gt;</p>
+      </article>
+    </main>
+
+    <aside class="related">
+      &lt;aside&gt;<br/>Related
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; UTN 2026</p>
+  </footer>
+
+</body>
+</html>
