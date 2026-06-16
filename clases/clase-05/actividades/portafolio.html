@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Portafolio – Christopher León Vega</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      color: #2d2d2d;
+    }
+
+    /* ===== SKIP LINK (accesibilidad) ===== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #e94560;
+      color: #fff;
+      padding: 8px 16px;
+      z-index: 100;
+      font-size: 0.9rem;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: #fff;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: #e0e8f5;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #e94560;
+      text-decoration: underline;
+    }
+
+    /* ===== PERFIL ===== */
+    .perfil {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      background: #fff;
+      padding: 40px;
+      border-bottom: 3px solid #e94560;
+    }
+
+    .perfil img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #e94560;
+      flex-shrink: 0;
+    }
+
+    .perfil-info h2 {
+      font-size: 1.4rem;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+    }
+
+    .perfil-info p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ===== PROYECTOS ===== */
+    .proyectos-section {
+      padding: 40px;
+    }
+
+    .proyectos-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #e94560;
+      margin-bottom: 28px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e94560;
+    }
+
+    .proyectos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      color: #1a1a2e;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .card a {
+      display: inline-block;
+      background: #1a1a2e;
+      color: #e94560;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+
+    .card a:hover,
+    .card a:focus {
+      background: #e94560;
+      color: #fff;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1a1a2e;
+      color: #a8b8d8;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+    }
+
+    /* ===== MEDIA QUERIES ===== */
+
+    /* Pantallas medianas: 600px – 1024px → 2 columnas */
+    @media (max-width: 1024px) {
+      .proyectos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Pantallas pequeñas: menos de 600px */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 24px;
+      }
+
+      header h1 {
+        font-size: 1.2rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+      }
+
+      .perfil {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 20px;
+      }
+
+      .perfil img {
+        width: 90px;
+        height: 90px;
+      }
+
+      .perfil-info h2 {
+        font-size: 1.1rem;
+      }
+
+      .perfil-info p {
+        font-size: 0.88rem;
+      }
+
+      .proyectos-section {
+        padding: 24px;
+      }
+
+      .proyectos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Christopher León Vega</h1>
+    <nav aria-label="Navegación principal">
+      <a href="#perfil">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="resume.html">CV</a>
+    </nav>
+  </header>
+
+  <!-- PERFIL -->
+  <section id="perfil" class="perfil" aria-labelledby="titulo-perfil">
+    <img
+      src="https://placehold.co/120x120/1a1a2e/e94560?text=CL"
+      alt="Avatar de Christopher León Vega"
+      width="120"
+      height="120"
+    />
+    <div class="perfil-info">
+      <h2 id="titulo-perfil">Sobre mí</h2>
+      <p>
+        Quality Analyst con más de 3 años de experiencia en QA y optimización de procesos.
+        Actualmente cursando Ingeniería en Software en la UTN. Apasionado por el desarrollo web
+        y la construcción de productos digitales con buenas prácticas y estándares modernos.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <main id="main">
+    <section id="proyectos" class="proyectos-section" aria-labelledby="titulo-proyectos">
+      <h2 id="titulo-proyectos">Proyectos</h2>
+      <div class="proyectos-grid">
+
+        <article class="card">
+          <h3>CV en HTML y CSS</h3>
+          <p>
+            Currículum vitae personal construido con HTML semántico y CSS puro.
+            Diseño de dos columnas, responsivo y sin dependencias externas.
+          </p>
+          <a href="resume.html" aria-label="Ver proyecto CV en HTML y CSS">Ver proyecto →</a>
+        </article>
+
+        <article class="card">
+          <h3>Workshop HTML Semántico</h3>
+          <p>
+            Página de práctica con etiquetas semánticas de HTML5: header, nav, main,
+            aside y footer, siguiendo las buenas prácticas de accesibilidad web.
+          </p>
+          <a href="../clase-02/actividades/workshop.html" aria-label="Ver proyecto Workshop HTML Semántico">Ver proyecto →</a>
+        </article>
+
+        <article class="card">
+          <h3>Card Modelo de Caja</h3>
+          <p>
+            Tarjeta construida aplicando el modelo de caja de CSS: margin, border,
+            padding y width, con una paleta de colores institucional.
+          </p>
+          <a href="../clase-03/actividades/card.html" aria-label="Ver proyecto Card Modelo de Caja">Ver proyecto →</a>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Christopher León Vega &mdash; ISW-521 Programación en Ambiente Web I &copy; 2026</p>
+  </footer>
+
+</body>
+</html>
