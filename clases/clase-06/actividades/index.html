@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Básico: Patrón de Diseño HOC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="main-container">
+    
+    <!-- CABECERA -->
+    <header>
+      <h1>Ejemplo de Patrón Higher-Order Component (HOC)</h1>
+    </header>
+
+    <!-- CONTENEDOR DE EJEMPLOS -->
+    <main class="grid-examples">
+      
+      <!-- Bloque 1: Componentes Base -->
+      <section class="example-box">
+        <h2>1. Componentes Base (Sin HOC)</h2>
+        <p class="section-desc">Componentes estándar sin funcionalidad agregada.</p>
+        
+        <div class="element-container">
+          <div id="base-btn-mount"></div>
+          <div id="base-card-mount"></div>
+        </div>
+      </section>
+
+      <!-- Bloque 2: Componentes Mejorados -->
+      <section class="example-box highlight-box">
+        <h2>2. Componentes Mejorados (Con HOC)</h2>
+        <p class="section-desc">Componentes envueltos por el HOC de registro de analíticas.</p>
+        
+        <div class="element-container">
+          <div id="tracked-btn-mount"></div>
+          <div id="tracked-card-mount"></div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="components.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

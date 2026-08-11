@@ -1,0 +1,142 @@
+/* 
+  ESTILOS SIMPLIFICADOS - PATRÓN HOC DEMO
+  Diseño básico, limpio y fácil de comprender para exposición.
+*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f9;
+  color: #333333;
+  margin: 0;
+  padding: 20px;
+}
+
+.main-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e1e4e8;
+}
+
+/* Cabecera */
+header {
+  text-align: center;
+  border-bottom: 2px solid #eaecef;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #24292e;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 0;
+  color: #2f363d;
+}
+
+/* Nota de información */
+.info-note {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* Grid de Ejemplos */
+.grid-examples {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .grid-examples {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Bloques de ejemplo */
+.example-box {
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 20px;
+  background-color: #fafbfc;
+}
+
+/* Destacar el bloque con HOC */
+.highlight-box {
+  border: 1px dashed #0066cc;
+  background-color: #f0f7ff;
+}
+
+.section-desc {
+  font-size: 13px;
+  color: #586069;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.element-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Componentes Básicos (Estilos del Botón y Tarjeta) */
+.btn-simple {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.btn-simple:hover {
+  background-color: #0056b3;
+}
+
+.card-simple {
+  background-color: #ffffff;
+  border: 1px solid #d1d5da;
+  border-radius: 4px;
+  padding: 15px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card-simple:hover {
+  border-color: #0366d6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-simple h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #24292e;
+}
+
+.card-simple p {
+  margin: 0;
+  font-size: 13px;
+  color: #586069;
+  line-height: 1.4;
+}
